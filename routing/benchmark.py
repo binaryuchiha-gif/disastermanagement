@@ -37,6 +37,19 @@ def _prep(nx: int, seed: int = 1234):
     return g, shelters
 
 
+def _far_source(g, target):
+    """Pick a source far (in straight-line) from the target so benchmarks measure
+    a non-trivial query, not a degenerate 0-edge path."""
+    best, best_d = 0, -1.0
+    for nid in g.nodes:
+        if g.nodes[nid].is_shelter:
+            continue
+        d = g.straight_line_m(nid, target)
+        if d > best_d:
+            best_d, best = d, nid
+    return best
+
+
 def _time_ms(fn, repeats: int) -> tuple[float, float]:
     """Return (median_ms, peak_kb) over `repeats` runs."""
     times = []
@@ -55,13 +68,14 @@ def run(sizes: list[int], repeats: int) -> list[dict]:
     rows = []
     for nx in sizes:
         g, shelters = _prep(nx)
-        s, t = 0, shelters[0]
+        t = shelters[0]
+        s = _far_source(g, t)
         algos = {
             "dijkstra_time": lambda: dijkstra(g, s, t, CostConfig(mode=CostMode.TIME)),
             "astar_time": lambda: astar(g, s, t, CostConfig(mode=CostMode.TIME)),
             "dijkstra_uncertainty": lambda: dijkstra(g, s, t, CostConfig(mode=CostMode.UNCERTAINTY)),
             "chance_constrained": lambda: chance_constrained_route(g, s, t, 0.1),
-            "pareto": lambda: pareto_routes(g, s, t),
+            "pareto": lambda: pareto_routes(g, s, t, label_budget=20000),
             "dstar_lite_build": lambda: DStarLite(g, s, t, CostConfig(mode=CostMode.TIME)),
             "full_recompute": lambda: full_recompute(g, s, t, CostConfig(mode=CostMode.TIME), set()),
         }
@@ -81,7 +95,8 @@ def dstar_vs_recompute(nx: int = 30, n_blocks: int = 10, seed: int = 1234) -> li
     """Compare incremental D* Lite repair latency vs full recompute as edges are
     blocked one by one along the current route."""
     g, shelters = _prep(nx, seed)
-    s, t = 0, shelters[0]
+    t = shelters[0]
+    s = _far_source(g, t)
     cfg = CostConfig(mode=CostMode.TIME)
     ds = DStarLite(g, s, t, cfg)
     path = ds.extract_path()
