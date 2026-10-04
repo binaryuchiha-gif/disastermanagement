@@ -23,7 +23,7 @@ Last updated: Phase 0 complete, beginning execution.
 | 2 | Feature pipeline + model + calibration + export | ✅ | stdlib GBT+logistic+baselines, spatial CV, isotonic/Platt, split-conformal (cov 0.918), perm-importance (hydrology-sensible), JS export + parity VERIFIED (1.67e-16). Lib path (LightGBM/SHAP/MLflow) UNVERIFIED. |
 | 1 | OSM/DEM pipeline | ✅ (sim) / ⚠️ (real) | validate.py + compression + snap-test RUN in sandbox (100% SCC, 4.4x compress). build_real_graph.py (OSMnx+SRTM) UNVERIFIED. DATA_CARD done. |
 | 1B | MapLibre/PMTiles PWA | ✅ (logic) / ⚠️ (map) | geo/snapping/turn-by-turn/routing/sync/i18n RUN+tested under node (12 smoke asserts). PY<->JS routing parity 0, model parity 1.67e-16. SW Range handler, MapLibre+PMTiles wiring, download flow, Playwright e2e written but UNVERIFIED (needs npm). |
-| 5 | FastAPI backend + sync + admin + i18n | ⬜ | UNVERIFIED (needs pip) |
+| 5 | FastAPI backend + sync + admin + i18n | ✅ (reliability+sync+i18n) / ⚠️ (API) | reliability scorer RUN+tested + adversarial eval (precision>=0.9 @60% adv). sync.js + i18n (en/ta/hi) tested under node. FastAPI app, JWT, SQLite, Docker UNVERIFIED. Privacy note done. |
 | 6 | Tests, CI, docs | ⬜ | |
 | 7 | Paper, demo, VIVA_QA | ⬜ | |
 
