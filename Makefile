@@ -13,6 +13,8 @@ help:
 	@echo "  make test         - run stdlib test suite (routing, sim, model, stats)"
 	@echo "  make demo-graph   - generate SYNTHETIC city graph + risk labels"
 	@echo "  make experiments  - reproduce every SYNTHETIC table & figure -> results/"
+	@echo "  make train        - train+evaluate risk model on SYNTHETIC data (H1)"
+	@echo "  make parity       - PY<->JS routing + model parity checks (node)"
 	@echo "  make figures      - regenerate SVG figures from results/"
 	@echo "  make clean        - remove generated artifacts"
 	@echo "  --- require local internet + pip (UNVERIFIED in sandbox) ---"
@@ -33,6 +35,15 @@ demo-graph:
 
 experiments:
 	$(PYTHON) -m experiments.run_all --seed $(SEED)
+
+train:
+	$(PYTHON) -m risk_model.train --seed 0 --nx 25
+	$(PYTHON) -m risk_model.export_js --check-parity
+
+parity:
+	$(PYTHON) -m scripts.export_parity_vectors
+	cd pwa && NODE_OPTIONS= node scripts/node_smoke.mjs
+	cd pwa && NODE_OPTIONS= node scripts/parity_check.mjs ../results/parity_vectors_SYNTHETIC.json
 
 figures:
 	$(PYTHON) -m experiments.make_figures

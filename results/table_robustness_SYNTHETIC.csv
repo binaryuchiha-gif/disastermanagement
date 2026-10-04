@@ -1,0 +1,5 @@
+SYNTHETIC,scenario,model_error,uncertainty_pct_blocked_mid,shortest_distance_pct_blocked_mid,uncertainty_p95_evac,shortest_distance_p95_evac,uncertainty_pct_failed,shortest_distance_pct_failed
+True,extreme,0.0,44.051,57.02,4985.497,4773.095,10.081,16.343
+True,extreme,0.1,48.384,60.788,4945.609,4539.05,10.899,16.848
+True,extreme,0.2,49.96,60.788,5204.366,4539.05,10.96,16.848
+True,extreme,0.3,52.394,60.788,5485.1,4539.05,10.909,16.848

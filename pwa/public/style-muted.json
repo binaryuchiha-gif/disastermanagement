@@ -1,0 +1,30 @@
+{
+  "version": 8,
+  "name": "ResQFlow-X muted (so risk colors stand out)",
+  "glyphs": "/fonts/{fontstack}/{range}.pbf",
+  "sprite": "/sprites/sprite",
+  "sources": {
+    "basemap": {
+      "type": "vector",
+      "url": "pmtiles:///tiles/study_area_SYNTHETIC.pmtiles",
+      "attribution": "© OpenStreetMap contributors"
+    }
+  },
+  "layers": [
+    { "id": "background", "type": "background", "paint": { "background-color": "#1b2430" } },
+    { "id": "water", "type": "fill", "source": "basemap", "source-layer": "water",
+      "paint": { "fill-color": "#223042" } },
+    { "id": "landuse", "type": "fill", "source": "basemap", "source-layer": "landuse",
+      "paint": { "fill-color": "#20272f", "fill-opacity": 0.6 } },
+    { "id": "roads-minor", "type": "line", "source": "basemap", "source-layer": "transportation",
+      "filter": ["!=", "class", "motorway"],
+      "paint": { "line-color": "#3a4350", "line-width": 1 } },
+    { "id": "roads-major", "type": "line", "source": "basemap", "source-layer": "transportation",
+      "filter": ["==", "class", "motorway"],
+      "paint": { "line-color": "#4a5768", "line-width": 2 } },
+    { "id": "place-labels", "type": "symbol", "source": "basemap", "source-layer": "place",
+      "layout": { "text-field": ["get", "name"], "text-font": ["Noto Sans Regular"],
+                  "text-size": 11 },
+      "paint": { "text-color": "#9fb0c0", "text-halo-color": "#1b2430", "text-halo-width": 1 } }
+  ]
+}

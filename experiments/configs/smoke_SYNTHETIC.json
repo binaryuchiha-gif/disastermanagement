@@ -1,0 +1,15 @@
+{
+  "name": "smoke_SYNTHETIC",
+  "SYNTHETIC": true,
+  "graph": {"seed": 1234, "nx": 15, "ny": 15},
+  "n_agents": 60,
+  "n_origins": 25,
+  "seeds": [0,1,2,3,4],
+  "scenarios": ["moderate", "extreme"],
+  "methods": ["shortest_distance", "uncertainty"],
+  "baseline_method": "shortest_distance",
+  "label_noise": 0.05,
+  "model_errors": [0.0, 0.2],
+  "robustness_scenario": "extreme",
+  "robustness_method": "uncertainty"
+}

@@ -1,0 +1,27 @@
+{
+  "name": "resqflow-x-pwa",
+  "version": "0.1.0",
+  "description": "ResQFlow-X offline-first evacuation PWA (MapLibre + PMTiles)",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "test:smoke": "node scripts/node_smoke.mjs",
+    "test:parity": "node scripts/parity_check.mjs ../results/parity_vectors_SYNTHETIC.json"
+  },
+  "dependencies": {
+    "maplibre-gl": "4.7.1",
+    "pmtiles": "3.2.1",
+    "flatbush": "4.4.0",
+    "idb": "8.0.0"
+  },
+  "devDependencies": {
+    "vite": "5.4.10",
+    "vite-plugin-pwa": "0.20.5",
+    "vitest": "2.1.4",
+    "@playwright/test": "1.48.2"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "SYNTHETIC": true,
+  "config_file": "experiments/configs/default_SYNTHETIC.json",
+  "config_sha256": "853f145a4f7fae95",
+  "seed": 1234,
+  "n_seeds": 33,
+  "python": "3.11.15",
+  "platform": "Linux-6.1.186-228.374.amzn2023.x86_64-x86_64-with-glibc2.34",
+  "elapsed_s": 418.07,
+  "outputs": [
+    "table_methods_SYNTHETIC.csv",
+    "table_robustness_SYNTHETIC.csv",
+    "safety_time_SYNTHETIC.csv"
+  ],
+  "note": "All results derived from SYNTHETIC data. NOT real-city findings."
+}

@@ -1,0 +1,17 @@
+# Risk model config (used by the UNVERIFIED library path risk_model/train_lib.py).
+# The stdlib train.py ignores this and uses its own defaults.
+provenance: SYNTHETIC   # set to REAL when data/processed/real_dataset.parquet exists
+graph:
+  seed: 1234
+  nx: 45
+  ny: 45
+cv:
+  n_folds: 5
+  block_deg: 0.01
+  seed: 0
+models:
+  logistic: {max_iter: 1000}
+  random_forest: {n_estimators: 400, class_weight: balanced}
+  lightgbm: {n_estimators: 600, learning_rate: 0.03, num_leaves: 31, subsample: 0.8}
+calibration: isotonic
+conformal_alpha: 0.1

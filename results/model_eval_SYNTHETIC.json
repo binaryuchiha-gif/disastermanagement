@@ -1,0 +1,201 @@
+{
+  "SYNTHETIC": true,
+  "provenance": "SYNTHETIC",
+  "seed": 0,
+  "n_rows": 6762,
+  "features": [
+    "inv_elev_norm",
+    "inv_slope_norm",
+    "twi_norm",
+    "flow_acc_norm",
+    "near_water_norm",
+    "hand_norm",
+    "bridge_flag",
+    "road_primary",
+    "rain_norm"
+  ],
+  "spatial_cv": {
+    "legacy_hand_tuned": {
+      "roc_auc": {
+        "mean": 0.763,
+        "std": 0.0437
+      },
+      "pr_auc": {
+        "mean": 0.4762,
+        "std": 0.1043
+      },
+      "f1": {
+        "mean": 0.5042,
+        "std": 0.0854
+      },
+      "brier": {
+        "mean": 0.7005,
+        "std": 0.0243
+      },
+      "log_loss": {
+        "mean": 2.2028,
+        "std": 0.125
+      },
+      "ece": {
+        "mean": 0.7729,
+        "std": 0.019
+      }
+    },
+    "static_risk": {
+      "roc_auc": {
+        "mean": 0.6998,
+        "std": 0.0389
+      },
+      "pr_auc": {
+        "mean": 0.3075,
+        "std": 0.0979
+      },
+      "f1": {
+        "mean": 0.3868,
+        "std": 0.0694
+      },
+      "brier": {
+        "mean": 0.1798,
+        "std": 0.0261
+      },
+      "log_loss": {
+        "mean": 0.5427,
+        "std": 0.0581
+      },
+      "ece": {
+        "mean": 0.2721,
+        "std": 0.0322
+      }
+    },
+    "logistic": {
+      "roc_auc": {
+        "mean": 0.7664,
+        "std": 0.0433
+      },
+      "pr_auc": {
+        "mean": 0.477,
+        "std": 0.1028
+      },
+      "f1": {
+        "mean": 0.509,
+        "std": 0.09
+      },
+      "brier": {
+        "mean": 0.0853,
+        "std": 0.0099
+      },
+      "log_loss": {
+        "mean": 0.3042,
+        "std": 0.0246
+      },
+      "ece": {
+        "mean": 0.0383,
+        "std": 0.0114
+      }
+    },
+    "gbt": {
+      "roc_auc": {
+        "mean": 0.7756,
+        "std": 0.039
+      },
+      "pr_auc": {
+        "mean": 0.4955,
+        "std": 0.1059
+      },
+      "f1": {
+        "mean": 0.5129,
+        "std": 0.0805
+      },
+      "brier": {
+        "mean": 0.0804,
+        "std": 0.0099
+      },
+      "log_loss": {
+        "mean": 0.288,
+        "std": 0.0261
+      },
+      "ece": {
+        "mean": 0.0194,
+        "std": 0.007
+      }
+    }
+  },
+  "calibration": {
+    "ece_uncalibrated": 0.2028,
+    "ece_platt": 0.1633,
+    "ece_isotonic": 0.1527,
+    "conformal_alpha": 0.1,
+    "conformal_q": 0.8813,
+    "conformal_empirical_coverage": 0.9933
+  },
+  "ablations": [
+    {
+      "ablation": "full",
+      "features": 9,
+      "roc_auc": 0.66
+    },
+    {
+      "ablation": "minus_terrain",
+      "features": 4,
+      "roc_auc": 0.6891,
+      "auc_drop": -0.0291
+    },
+    {
+      "ablation": "minus_proximity",
+      "features": 8,
+      "roc_auc": 0.6577,
+      "auc_drop": 0.0023
+    },
+    {
+      "ablation": "minus_scenario_rain",
+      "features": 8,
+      "roc_auc": 0.616,
+      "auc_drop": 0.0439
+    },
+    {
+      "ablation": "minus_road_attrs",
+      "features": 7,
+      "roc_auc": 0.6543,
+      "auc_drop": 0.0057
+    }
+  ],
+  "permutation_importance": [
+    {
+      "feature": "flow_acc_norm",
+      "importance": 0.03719
+    },
+    {
+      "feature": "near_water_norm",
+      "importance": 0.03007
+    },
+    {
+      "feature": "twi_norm",
+      "importance": 0.02593
+    },
+    {
+      "feature": "inv_elev_norm",
+      "importance": 0.00944
+    },
+    {
+      "feature": "road_primary",
+      "importance": 1e-05
+    },
+    {
+      "feature": "rain_norm",
+      "importance": 0.0
+    },
+    {
+      "feature": "bridge_flag",
+      "importance": -2e-05
+    },
+    {
+      "feature": "inv_slope_norm",
+      "importance": -0.01275
+    },
+    {
+      "feature": "hand_norm",
+      "importance": -0.0368
+    }
+  ],
+  "note": "H1 evidence on SYNTHETIC data. Rerun on REAL data via train_lib.py."
+}

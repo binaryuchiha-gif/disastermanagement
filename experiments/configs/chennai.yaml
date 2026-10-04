@@ -1,0 +1,25 @@
+# Study area config for the REAL Phase-1 pipeline (UNVERIFIED in sandbox).
+# Chennai: Velachery + Adyar + Pallikaranai (flood-prone; 2015 floods).
+# Bounding box is approximate; refine against the OSM extract you download.
+name: chennai_velachery_adyar_pallikaranai
+study_area:
+  north: 13.02
+  south: 12.93
+  east: 80.25
+  west: 80.18
+dem:
+  path: data/raw/srtm_chennai.tif   # SRTM 1-arcsec GeoTIFF covering the bbox
+  source: SRTMGL1 (NASA/USGS, ~30 m)
+quantize_decimals: 5                # ~1.1 m at this latitude
+pois:
+  shelter_tags: {amenity: shelter}
+  hospital_tags: {amenity: hospital}
+  fuel_tags: {amenity: fuel}
+  default_shelter_capacity: 200     # LABELED ASSUMPTION when OSM lacks capacity
+landmarks_snap_test:
+  - {name: "Velachery MRTS", lat: 12.9755, lon: 80.2210, expect_within_m: 300}
+  - {name: "Adyar Signal", lat: 13.0012, lon: 80.2565, expect_within_m: 300}
+  - {name: "Pallikaranai Marsh", lat: 12.9400, lon: 80.2100, expect_within_m: 500}
+rainfall:
+  source: open-meteo-historical     # or IMD gridded (see DATA_CARD)
+  events: ["2015-11", "2015-12", "2021-11", "2023-12"]

@@ -26,6 +26,12 @@ jobs:
           python -m experiments.run_all --seed 1234 --smoke
       - name: Determinism check (same seed -> identical hash)
         run: python -m experiments.check_determinism --seed 1234
+      - name: JS offline-logic smoke (plain node, no npm)
+        run: node pwa/scripts/node_smoke.mjs
+      - name: Python<->JS routing parity (plain node, no npm)
+        run: |
+          python -m scripts.export_parity_vectors
+          node pwa/scripts/parity_check.mjs results/parity_vectors_SYNTHETIC.json
 
   lint-type:
     name: Lint + type check (full deps)
