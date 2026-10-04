@@ -1,0 +1,6 @@
+# Place real input data here (git-ignored). See docs/DATA_CARD.md and docs/REPRODUCE.md.
+# Expected for the real Chennai pipeline:
+#   data/raw/chennai.osm.pbf      (Geofabrik extract, clipped to study area)
+#   data/raw/srtm_chennai.tif     (SRTM 1-arcsec DEM covering the study bbox)
+#   data/raw/rainfall/*.csv       (Open-Meteo / IMD historical rainfall)
+#   data/raw/flood_2015/*.geojson (flood extents for ground truth, if available)

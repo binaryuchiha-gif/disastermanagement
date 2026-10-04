@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+
+# Node
+node_modules/
+pwa/dist/
+pwa/.vite/
+
+# Data (large / licensed upstream artifacts)
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*.pmtiles
+*.tif
+*.pbf
+
+# Results: keep manifest + small figures/tables, ignore heavy artifacts
+results/*.png
+results/*.npz
+results/runs/
+
+# MLflow
+mlruns/
+
+# OS
+.DS_Store

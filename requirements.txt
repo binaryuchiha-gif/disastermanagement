@@ -1,0 +1,52 @@
+# ResQFlow-X Python dependencies (PINNED).
+#
+# NOTE: The runnable research core (routing/, sim/, risk_model core, pipeline
+# feature engineering, stats, SVG figures) uses ONLY the Python standard library
+# and needs NONE of the packages below. These are required only for the
+# UNVERIFIED, library-backed variants (real geo pipeline, LightGBM/RF models,
+# SHAP, MLflow) that could not be installed in the sealed sandbox.
+#
+# Install locally (where you have internet):
+#   python -m venv .venv && source .venv/bin/activate
+#   pip install -r requirements.txt
+
+# --- core scientific stack ---
+numpy==1.26.4
+scipy==1.11.4
+pandas==2.1.4
+scikit-learn==1.3.2
+
+# --- gradient boosting / models ---
+lightgbm==4.1.0
+xgboost==2.0.3
+
+# --- geo / data pipeline (Phase 1) ---
+osmnx==1.8.1
+networkx==3.2.1
+rasterio==1.3.9
+shapely==2.0.2
+geopandas==0.14.2
+pyproj==3.6.1
+rtree-sitter==0.20.4  # placeholder removed if unused
+
+# --- rainfall / remote data ---
+requests==2.31.0
+
+# --- explainability & calibration ---
+shap==0.44.0
+
+# --- experiment tracking ---
+mlflow==2.9.2
+
+# --- figures ---
+matplotlib==3.8.2
+
+# --- testing ---
+pytest==7.4.4
+hypothesis==6.92.1
+
+# --- model export to browser ---
+onnx==1.15.0
+onnxruntime==1.16.3
+skl2onnx==1.16.0
+m2cgen==0.10.0  # tree-ensemble -> plain JS/Python, used for on-device export

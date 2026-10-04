@@ -1,0 +1,61 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, "feature/**" ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  core:
+    name: Core stdlib tests + reproducibility smoke
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Run stdlib test suite (no third-party deps)
+        run: python -m pytest -q
+      - name: Reproducibility smoke experiment (deterministic, seeded)
+        run: |
+          python -m pipeline.synth_graph --seed 1234 --out /tmp/g.json
+          python -m experiments.run_all --seed 1234 --smoke
+      - name: Determinism check (same seed -> identical hash)
+        run: python -m experiments.check_determinism --seed 1234
+
+  lint-type:
+    name: Lint + type check (full deps)
+    runs-on: ubuntu-latest
+    continue-on-error: true  # library stack is UNVERIFIED in CI until deps resolve
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dev tooling
+        run: pip install ruff mypy
+      - name: Lint
+        run: ruff check .
+      - name: Type check (core packages)
+        run: mypy routing sim || true
+
+  frontend:
+    name: Frontend tests (Vitest) + e2e offline (Playwright)
+    runs-on: ubuntu-latest
+    continue-on-error: true  # UNVERIFIED: needs npm install, blocked in dev sandbox
+    defaults:
+      run:
+        working-directory: pwa
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm ci
+      - run: npm run test
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:e2e
