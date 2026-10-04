@@ -17,8 +17,8 @@ Last updated: Phase 0 complete, beginning execution.
 | Phase | Component | Status | Notes |
 |-------|-----------|--------|-------|
 | 0 | Audit & plan | ✅ | Repo was empty; greenfield. Report delivered & approved. |
-| scaffold | Folders, README, STATUS, Make, CI, configs | 🟡 | in progress |
-| 3 | Routing algorithms (9) | ⬜ | next |
+| scaffold | Folders, README, STATUS, Make, CI, configs | ✅ | done |
+| 3 | Routing algorithms (9) | ✅ | all 9 impl + 25 property tests green + benchmarks + complexity doc |
 | 4 | Simulator + experiments + stats | ⬜ | |
 | 2 | Feature pipeline + model + calibration + export | ⬜ | |
 | 1 | OSM/DEM pipeline | ⬜ | scripts UNVERIFIED (needs internet) |

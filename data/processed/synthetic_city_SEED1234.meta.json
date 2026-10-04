@@ -1,0 +1,7 @@
+{
+  "SYNTHETIC": true,
+  "seed": 1234,
+  "n_nodes": 2025,
+  "n_edges": 7442,
+  "note": "SYNTHETIC physics-informed city graph. NOT a real place."
+}
