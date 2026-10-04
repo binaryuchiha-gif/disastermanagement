@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta name="theme-color" content="#13293d" />
+  <title>ResQFlow-X — Evacuation Routing</title>
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css"
+        onerror="this.remove()" />
+  <style>
+    :root { --bg:#13293d; --fg:#eef3f7; --accent:#f4a259; --danger:#d1495b; }
+    * { box-sizing: border-box; }
+    html, body { margin:0; height:100%; font-family: system-ui, sans-serif; color:var(--fg); }
+    #map { position:absolute; inset:0; background:#1a1f2b; }
+    .panel { position:absolute; z-index:5; background:rgba(19,41,61,.92);
+             border-radius:12px; padding:12px; backdrop-filter:blur(4px); }
+    #controls { top:10px; left:10px; width:min(340px,calc(100% - 20px)); }
+    #legend { bottom:10px; left:10px; font-size:13px; }
+    #sos { bottom:10px; right:10px; background:var(--danger); border:none;
+           color:#fff; font-size:18px; font-weight:700; padding:16px 22px;
+           border-radius:14px; }
+    button, select { font-size:15px; padding:8px 10px; border-radius:8px; border:0; }
+    .row { display:flex; gap:8px; align-items:center; margin:6px 0; flex-wrap:wrap; }
+    label { font-size:13px; }
+    #status { font-size:12px; opacity:.85; }
+    .swatch { display:inline-block; width:14px; height:8px; margin-right:6px; vertical-align:middle; }
+    .hi-contrast { filter: contrast(1.4) brightness(1.1); }
+    #attribution { position:absolute; bottom:2px; right:2px; z-index:5;
+                   font-size:10px; background:rgba(0,0,0,.4); padding:1px 5px; }
+    .big-text { font-size:120%; }
+  </style>
+</head>
+<body>
+  <div id="map" role="application" aria-label="Evacuation map"></div>
+
+  <div id="controls" class="panel">
+    <div class="row">
+      <strong>ResQFlow-X</strong>
+      <span id="status" aria-live="polite">starting…</span>
+    </div>
+    <div class="row">
+      <label for="scenario">Rainfall</label>
+      <input id="scenario" type="range" min="0" max="2" step="1" value="1"
+             aria-label="Rainfall scenario" />
+      <span id="scenarioLabel">moderate</span>
+    </div>
+    <div class="row">
+      <label for="method">Route</label>
+      <select id="method" aria-label="Routing method">
+        <option value="uncertainty">Safest (uncertainty-aware)</option>
+        <option value="astar_time">Fastest</option>
+        <option value="pareto_topsis">Balanced (Pareto)</option>
+        <option value="accessibility">Accessible</option>
+      </select>
+    </div>
+    <div class="row">
+      <button id="downloadMap">⬇ Download offline map</button>
+      <button id="toggleContrast" aria-pressed="false">High contrast</button>
+    </div>
+    <div id="whyPanel" class="row" style="font-size:12px"></div>
+  </div>
+
+  <div id="legend" class="panel" aria-label="Risk legend">
+    <div><span class="swatch" style="background:#2ca02c"></span> low risk</div>
+    <div><span class="swatch" style="background:#f4a259"></span> medium risk</div>
+    <div><span class="swatch" style="background:#d1495b"></span> high risk</div>
+    <div style="margin-top:4px"><span class="swatch" style="background:#1f77b4"></span> safest route
+      &nbsp; <span class="swatch" style="border-top:3px dashed #fff"></span> fastest</div>
+  </div>
+
+  <button id="sos" aria-label="Send SOS">SOS</button>
+  <div id="attribution">© OpenStreetMap contributors</div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

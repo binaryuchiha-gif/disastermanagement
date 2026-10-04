@@ -22,7 +22,7 @@ Last updated: Phase 0 complete, beginning execution.
 | 4 | Simulator + experiments + stats | ✅ | ABM sim + reverse-SSSP cache + 33-seed runner + Wilcoxon/Cliff's/Holm + SVG figures + robustness. H2/H3/H4 confirmed on SYNTHETIC data. |
 | 2 | Feature pipeline + model + calibration + export | ✅ | stdlib GBT+logistic+baselines, spatial CV, isotonic/Platt, split-conformal (cov 0.918), perm-importance (hydrology-sensible), JS export + parity VERIFIED (1.67e-16). Lib path (LightGBM/SHAP/MLflow) UNVERIFIED. |
 | 1 | OSM/DEM pipeline | ✅ (sim) / ⚠️ (real) | validate.py + compression + snap-test RUN in sandbox (100% SCC, 4.4x compress). build_real_graph.py (OSMnx+SRTM) UNVERIFIED. DATA_CARD done. |
-| 1B | MapLibre/PMTiles PWA | ⬜ | mostly UNVERIFIED (needs npm) |
+| 1B | MapLibre/PMTiles PWA | ✅ (logic) / ⚠️ (map) | geo/snapping/turn-by-turn/routing/sync/i18n RUN+tested under node (12 smoke asserts). PY<->JS routing parity 0, model parity 1.67e-16. SW Range handler, MapLibre+PMTiles wiring, download flow, Playwright e2e written but UNVERIFIED (needs npm). |
 | 5 | FastAPI backend + sync + admin + i18n | ⬜ | UNVERIFIED (needs pip) |
 | 6 | Tests, CI, docs | ⬜ | |
 | 7 | Paper, demo, VIVA_QA | ⬜ | |
