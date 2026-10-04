@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="440" font-family="sans-serif">
+<rect width="720" height="440" fill="white"/>
+<text x="360.0" y="26" font-size="16" font-weight="bold" text-anchor="middle">95th-percentile evacuation time by method (H4)</text>
+<text x="360.0" y="44" font-size="12" fill="#b00" text-anchor="middle">SYNTHETIC DATA — not real-city results</text>
+<rect x="70" y="60" width="500" height="310" fill="#fafafa" stroke="#ccc"/>
+<line x1="70" y1="370.0" x2="570" y2="370.0" stroke="#e5e5e5"/>
+<text x="62" y="374.0" font-size="11" text-anchor="end" fill="#333">0</text>
+<line x1="70" y1="308.0" x2="570" y2="308.0" stroke="#e5e5e5"/>
+<text x="62" y="312.0" font-size="11" text-anchor="end" fill="#333">19.8</text>
+<line x1="70" y1="246.0" x2="570" y2="246.0" stroke="#e5e5e5"/>
+<text x="62" y="250.0" font-size="11" text-anchor="end" fill="#333">39.7</text>
+<line x1="70" y1="184.0" x2="570" y2="184.0" stroke="#e5e5e5"/>
+<text x="62" y="188.0" font-size="11" text-anchor="end" fill="#333">59.5</text>
+<line x1="70" y1="122.0" x2="570" y2="122.0" stroke="#e5e5e5"/>
+<text x="62" y="126.0" font-size="11" text-anchor="end" fill="#333">79.4</text>
+<line x1="70" y1="60.0" x2="570" y2="60.0" stroke="#e5e5e5"/>
+<text x="62" y="64.0" font-size="11" text-anchor="end" fill="#333">99.2</text>
+<text x="70.0" y="388" font-size="11" text-anchor="middle" fill="#333">0</text>
+<text x="170.0" y="388" font-size="11" text-anchor="middle" fill="#333">0.2</text>
+<text x="270.0" y="388" font-size="11" text-anchor="middle" fill="#333">0.4</text>
+<text x="370.0" y="388" font-size="11" text-anchor="middle" fill="#333">0.6</text>
+<text x="470.0" y="388" font-size="11" text-anchor="middle" fill="#333">0.8</text>
+<text x="570.0" y="388" font-size="11" text-anchor="middle" fill="#333">1</text>
+<text x="320.0" y="420" font-size="13" text-anchor="middle">rainfall scenario</text>
+<text x="22" y="215.0" font-size="13" text-anchor="middle" transform="rotate(-90 22 215.0)">P95 evac time (min)</text>
+<rect x="86.7" y="132.5" width="30.0" height="237.5" fill="#1f77b4" opacity="0.85"/>
+<line x1="101.7" y1="126.5" x2="101.7" y2="138.5" stroke="#222"/>
+<line x1="98.7" y1="126.5" x2="104.7" y2="126.5" stroke="#222"/>
+<rect x="253.3" y="134.1" width="30.0" height="235.9" fill="#1f77b4" opacity="0.85"/>
+<line x1="268.3" y1="127.5" x2="268.3" y2="140.6" stroke="#222"/>
+<line x1="265.3" y1="127.5" x2="271.3" y2="127.5" stroke="#222"/>
+<rect x="420.0" y="121.5" width="30.0" height="248.5" fill="#1f77b4" opacity="0.85"/>
+<line x1="435.0" y1="110.0" x2="435.0" y2="133.0" stroke="#222"/>
+<line x1="432.0" y1="110.0" x2="438.0" y2="110.0" stroke="#222"/>
+<rect x="585" y="61" width="12" height="12" fill="#1f77b4"/>
+<text x="603" y="71" font-size="11">shortest_distance</text>
+<rect x="120.0" y="135.4" width="30.0" height="234.6" fill="#d62728" opacity="0.85"/>
+<line x1="135.0" y1="129.5" x2="135.0" y2="141.3" stroke="#222"/>
+<line x1="132.0" y1="129.5" x2="138.0" y2="129.5" stroke="#222"/>
+<rect x="286.7" y="134.1" width="30.0" height="235.9" fill="#d62728" opacity="0.85"/>
+<line x1="301.7" y1="128.1" x2="301.7" y2="140.0" stroke="#222"/>
+<line x1="298.7" y1="128.1" x2="304.7" y2="128.1" stroke="#222"/>
+<rect x="453.3" y="113.0" width="30.0" height="257.0" fill="#d62728" opacity="0.85"/>
+<line x1="468.3" y1="102.6" x2="468.3" y2="123.4" stroke="#222"/>
+<line x1="465.3" y1="102.6" x2="471.3" y2="102.6" stroke="#222"/>
+<rect x="585" y="81" width="12" height="12" fill="#d62728"/>
+<text x="603" y="91" font-size="11">static_risk</text>
+<rect x="153.3" y="135.4" width="30.0" height="234.6" fill="#2ca02c" opacity="0.85"/>
+<line x1="168.3" y1="129.5" x2="168.3" y2="141.3" stroke="#222"/>
+<line x1="165.3" y1="129.5" x2="171.3" y2="129.5" stroke="#222"/>
+<rect x="320.0" y="134.1" width="30.0" height="235.9" fill="#2ca02c" opacity="0.85"/>
+<line x1="335.0" y1="128.1" x2="335.0" y2="140.0" stroke="#222"/>
+<line x1="332.0" y1="128.1" x2="338.0" y2="128.1" stroke="#222"/>
+<rect x="486.7" y="110.5" width="30.0" height="259.5" fill="#2ca02c" opacity="0.85"/>
+<line x1="501.7" y1="100.4" x2="501.7" y2="120.5" stroke="#222"/>
+<line x1="498.7" y1="100.4" x2="504.7" y2="100.4" stroke="#222"/>
+<rect x="585" y="101" width="12" height="12" fill="#2ca02c"/>
+<text x="603" y="111" font-size="11">uncertainty</text>
+<rect x="186.7" y="135.4" width="30.0" height="234.6" fill="#9467bd" opacity="0.85"/>
+<line x1="201.7" y1="129.5" x2="201.7" y2="141.3" stroke="#222"/>
+<line x1="198.7" y1="129.5" x2="204.7" y2="129.5" stroke="#222"/>
+<rect x="353.3" y="134.1" width="30.0" height="235.9" fill="#9467bd" opacity="0.85"/>
+<line x1="368.3" y1="128.1" x2="368.3" y2="140.0" stroke="#222"/>
+<line x1="365.3" y1="128.1" x2="371.3" y2="128.1" stroke="#222"/>
+<rect x="520.0" y="110.5" width="30.0" height="259.5" fill="#9467bd" opacity="0.85"/>
+<line x1="535.0" y1="100.4" x2="535.0" y2="120.5" stroke="#222"/>
+<line x1="532.0" y1="100.4" x2="538.0" y2="100.4" stroke="#222"/>
+<rect x="585" y="121" width="12" height="12" fill="#9467bd"/>
+<text x="603" y="131" font-size="11">uncertainty_ucb</text>
+<text x="153.3" y="388" font-size="11" text-anchor="middle">mild</text>
+<text x="320.0" y="388" font-size="11" text-anchor="middle">moderate</text>
+<text x="486.7" y="388" font-size="11" text-anchor="middle">extreme</text>
+</svg>

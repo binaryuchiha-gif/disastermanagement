@@ -19,7 +19,7 @@ Last updated: Phase 0 complete, beginning execution.
 | 0 | Audit & plan | ✅ | Repo was empty; greenfield. Report delivered & approved. |
 | scaffold | Folders, README, STATUS, Make, CI, configs | ✅ | done |
 | 3 | Routing algorithms (9) | ✅ | all 9 impl + 25 property tests green + benchmarks + complexity doc |
-| 4 | Simulator + experiments + stats | ⬜ | |
+| 4 | Simulator + experiments + stats | ✅ | ABM sim + reverse-SSSP cache + 33-seed runner + Wilcoxon/Cliff's/Holm + SVG figures + robustness. H2/H3/H4 confirmed on SYNTHETIC data. |
 | 2 | Feature pipeline + model + calibration + export | ⬜ | |
 | 1 | OSM/DEM pipeline | ⬜ | scripts UNVERIFIED (needs internet) |
 | 1B | MapLibre/PMTiles PWA | ⬜ | mostly UNVERIFIED (needs npm) |

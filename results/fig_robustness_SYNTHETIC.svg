@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="440" font-family="sans-serif">
+<rect width="720" height="440" fill="white"/>
+<text x="360.0" y="26" font-size="16" font-weight="bold" text-anchor="middle">Robustness: blockages vs model error (H-robustness)</text>
+<text x="360.0" y="44" font-size="12" fill="#b00" text-anchor="middle">SYNTHETIC DATA — not real-city results</text>
+<rect x="70" y="60" width="500" height="310" fill="#fafafa" stroke="#ccc"/>
+<line x1="70" y1="370.0" x2="570" y2="370.0" stroke="#e5e5e5"/>
+<text x="62" y="374.0" font-size="11" text-anchor="end" fill="#333">0</text>
+<line x1="70" y1="308.0" x2="570" y2="308.0" stroke="#e5e5e5"/>
+<text x="62" y="312.0" font-size="11" text-anchor="end" fill="#333">14</text>
+<line x1="70" y1="246.0" x2="570" y2="246.0" stroke="#e5e5e5"/>
+<text x="62" y="250.0" font-size="11" text-anchor="end" fill="#333">28</text>
+<line x1="70" y1="184.0" x2="570" y2="184.0" stroke="#e5e5e5"/>
+<text x="62" y="188.0" font-size="11" text-anchor="end" fill="#333">41.9</text>
+<line x1="70" y1="122.0" x2="570" y2="122.0" stroke="#e5e5e5"/>
+<text x="62" y="126.0" font-size="11" text-anchor="end" fill="#333">55.9</text>
+<line x1="70" y1="60.0" x2="570" y2="60.0" stroke="#e5e5e5"/>
+<text x="62" y="64.0" font-size="11" text-anchor="end" fill="#333">69.9</text>
+<text x="70.0" y="388" font-size="11" text-anchor="middle" fill="#333">0</text>
+<text x="170.0" y="388" font-size="11" text-anchor="middle" fill="#333">0.066</text>
+<text x="270.0" y="388" font-size="11" text-anchor="middle" fill="#333">0.132</text>
+<text x="370.0" y="388" font-size="11" text-anchor="middle" fill="#333">0.198</text>
+<text x="470.0" y="388" font-size="11" text-anchor="middle" fill="#333">0.264</text>
+<text x="570.0" y="388" font-size="11" text-anchor="middle" fill="#333">0.33</text>
+<text x="320.0" y="420" font-size="13" text-anchor="middle">model error (|perturbation|)</text>
+<text x="22" y="215.0" font-size="13" text-anchor="middle" transform="rotate(-90 22 215.0)">% blocked mid-route</text>
+<polyline points="70.0,174.7 221.5,155.4 373.0,148.5 524.5,137.7" fill="none" stroke="#1f77b4" stroke-width="2"/>
+<circle cx="70.0" cy="174.7" r="3" fill="#1f77b4"/>
+<circle cx="221.5" cy="155.4" r="3" fill="#1f77b4"/>
+<circle cx="373.0" cy="148.5" r="3" fill="#1f77b4"/>
+<circle cx="524.5" cy="137.7" r="3" fill="#1f77b4"/>
+<rect x="585" y="61" width="12" height="12" fill="#1f77b4"/>
+<text x="603" y="71" font-size="11">uncertainty</text>
+<polyline points="70.0,117.1 221.5,100.4 373.0,100.4 524.5,100.4" fill="none" stroke="#d62728" stroke-width="2" stroke-dasharray="6,3"/>
+<circle cx="70.0" cy="117.1" r="3" fill="#d62728"/>
+<circle cx="221.5" cy="100.4" r="3" fill="#d62728"/>
+<circle cx="373.0" cy="100.4" r="3" fill="#d62728"/>
+<circle cx="524.5" cy="100.4" r="3" fill="#d62728"/>
+<rect x="585" y="81" width="12" height="12" fill="#d62728"/>
+<text x="603" y="91" font-size="11">shortest_distance</text>
+</svg>
